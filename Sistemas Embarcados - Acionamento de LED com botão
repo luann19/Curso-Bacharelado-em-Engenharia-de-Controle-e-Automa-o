@@ -4,7 +4,6 @@
 //Descrição: Código para piscar LEDs
 
 #define LED1 13
-#define LED2 12
 #define pinButton 2
 int buttonState = 0;
 int liga=0;
@@ -13,8 +12,6 @@ void setup()
 {
   pinMode(LED1, OUTPUT);
   pinMode(pinButton, INPUT_PULLUP); // define o botão como entrada com resistor pull-up interno
-  pinMode(LED2, OUTPUT);
-
 }
 
 void loop()
@@ -28,6 +25,7 @@ void loop()
     if(liga==1)
     {
       liga=0;
+      //Se a váriável "liga" estiver em nível lógico alto, ela é colocada para nível lógico baixo, qundo o botão é pressionado
     }
     else
     {
@@ -35,16 +33,15 @@ void loop()
     }
    }
  
+ //Se "liga=1", o LED acende.
   if(liga==1)
   {
     	digitalWrite(LED1, HIGH);
-    	digitalWrite(LED2, HIGH);	
   }
   else
   {
     
        digitalWrite(LED1, LOW);
-       digitalWrite(LED2, LOW);
   }
            
 }
